@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+.card{
+    @apply flex flex-col justify-center items-center border-2 rounded-2xl py-7 px-3;
+}
+
+.card img{
+    @apply border rounded-xl;
+}
+
+.card h3{
+    @apply text-xl font-semibold;
+}
+
+.card p{
+    @apply text-base;
+}
