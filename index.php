@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="src/css/output.css">
     <title>Document</title>
 </head>
 <body class="bg-gray-800 text-amber-400">
@@ -80,17 +80,15 @@ if ($response === FALSE) {
 #SHOW DATA
 foreach($data->results as $character){
     echo '
-    <div class="flex flex-col justify-center items-center border-2 rounded-2xl py-7 px-3">
-        <img src='.$character->image.' class="border rounded-xl">
-        <h3 class="text-xl font-semibold">'.$character->name.' </h3>
-        <p class="text-md">'.$character->species.' | '.$character->status.'</p>
+    <div class="card">
+        <img src='.$character->image.'>
+        <h3>'.$character->name.' </h3>
+        <p>'.$character->species.' | '.$character->status.'</p>
     </div>
     ';
 }
 
-
 ?>
-
 
     </div>
 </div>
