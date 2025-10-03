@@ -48,16 +48,17 @@
     <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-10 p-10">
 
 <?php
-
-$api_url = "https://rickandmortyapi.com/api/character/"; //API LINK  
+#API URL
+$api_url = "https://rickandmortyapi.com/api/character/"; 
 $mutable_url = $api_url . "?page=1";
 
-
+#GETS
 $name = $_POST['name'] ?? null;
 $status = $_POST['status'] ?? null;
 $specie = $_POST['specie'] ?? null;
 $gender = $_POST['gender'] ?? null;
 
+#FILTERS
 if(!empty($name)):   $mutable_url .= "&name=".$name; endif;
 if(!empty($status)): $mutable_url .= "&status=".$status; endif;
 if(!empty($specie)): $mutable_url .= "&species=".$specie; endif;
@@ -65,15 +66,16 @@ if(!empty($gender)): $mutable_url .= "&gender=".$gender; endif;
 
 echo $mutable_url;
 
+#GET API DATA
 $response = file_get_contents($mutable_url);
 
 if ($response === FALSE) {
     echo "Error fetching data from API.";
 } else {
-    $data = json_decode($response); // Assuming the API returns JSON    
+    $data = json_decode($response); 
 }
 
-
+#SHOW DATA
 foreach($data->results as $character){
     echo '
     <div class="flex flex-col justify-center items-center border-2 rounded-2xl py-7 px-3">
