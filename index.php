@@ -5,26 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/css/output.css">
-    <title>Document</title>
+    <title>Rick's and Morty's</title>
 </head>
-<body class="bg-gray-800 text-amber-400">
+<body>
+
+    <div class="w-full flex flex-col justify-center items-center mt-6 lg:mt-8">
+        <h1 class="text-2xl lg:text-4xl pallete">Welcome to Rick's and Morty's</h1>
+    </div>
 
     <div class="w-full flex flex-col justify-center items-center">
 
-        <form method="post" 
-          class="w-11/12 lg:w-6/8 flex flex-col md:flex-row justify-center mt-5 gap-4
-          bg-gray-500/30 backdrop-blur-md rounded-xl shadow-md px-10 py-8">
+        <form method="post">
     
-            <input type="text" name="name" placeholder="Name" class="lg:w-1/3 p-1 pl-3 bg-gray-500/30 rounded-xl shadow-md outline-none focus:ring-2 focus:ring-amber-400">
+            <input type="text" name="name" placeholder="Name" class="lg:w-1/3 p-1 pl-3">
 
-                <select name="status" class="p-1 bg-gray-500/30 rounded-xl shadow-md flex-1 text-center outline-none focus:ring-2 focus:ring-amber-400">
+                <select name="status" class="flex-1 text-center">
                     <option value="">Select a status</option>
                     <option value="Alive">Alive</option>
                     <option value="Dead">Dead</option>
                     <option value="Unknown">Unknown</option>
                 </select>
 
-                <select name="specie" class="p-1 bg-gray-500/30 rounded-xl shadow-md flex-1 text-center outline-none focus:ring-2 focus:ring-amber-400">
+                <select name="specie"class="flex-1 text-center">
                     <option value="">Select a specie</option>
                     <option value="Human">Human</option>
                     <option value="Alien">Alien</option>
@@ -38,7 +40,7 @@
                     <option value="Unknown">Unknown</option>
                 </select>
 
-                <select name="gender" class="p-1 bg-gray-500/30 rounded-xl shadow-md flex-1 text-center outline-none focus:ring-2 focus:ring-amber-400">
+                <select name="gender" class="flex-1 text-center">
                     <option value="">Select a gender</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
@@ -46,10 +48,10 @@
                     <option value="Unknown">Unknown</option>
                 </select>
 
-            <button type="submit" class="lg:w-1/8 p-1 bg-gray-500/30 rounded-xl shadow-md cursor-pointer outline-none focus:ring-2 focus:ring-amber-400">Search</button>
+            <button type="submit" class="lg:w-1/8 shadow-md cursor-pointer">Search</button>
         </form>
 
-    <div class="w-full md:w-11/12 lg:w-10/12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-10 p-10">
+    <div class="w-full md:w-11/12 lg:w-10/12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-10 p-10 pallete">
 
 <?php
 #API URL
@@ -87,6 +89,8 @@ foreach($data->results as $character){
     </div>
     ';
 }
+
+$next_page = $data->info->next;
 
 ?>
 
